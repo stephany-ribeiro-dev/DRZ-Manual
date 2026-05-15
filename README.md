@@ -59,7 +59,7 @@ cd backend
 npm install
 
 # Criar o arquivo de variáveis de ambiente
-cp .env.example .env
+cp .env
 ```
 
 Agora **abra o arquivo `backend/.env`** e substitua pela sua chave:
