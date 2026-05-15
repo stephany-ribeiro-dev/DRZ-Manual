@@ -1,0 +1,221 @@
+.upload-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  animation: fadeUp 0.4s ease both;
+}
+
+.screen-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.screen-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--drz-green);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.screen-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--drz-text);
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.screen-subtitle {
+  font-size: 14px;
+  color: var(--drz-text-muted);
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* ─── CARD ─── */
+.upload-card {
+  background: var(--drz-dark-2);
+  border: 1px solid var(--drz-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--drz-blue-accent), var(--drz-green));
+}
+
+.card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--drz-border);
+  background: var(--drz-dark-3);
+}
+
+.file-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--drz-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-icon {
+  color: var(--drz-green);
+}
+
+.char-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--drz-text-dim);
+}
+
+.text-editor {
+  width: 100%;
+  min-height: 380px;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: vertical;
+  padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--drz-text);
+  line-height: 1.7;
+  caret-color: var(--drz-green);
+}
+
+.text-editor::placeholder {
+  color: var(--drz-text-dim);
+}
+
+.card-actions {
+  padding: 16px 20px;
+  border-top: 1px solid var(--drz-border);
+  background: var(--drz-dark-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.status-msg {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 14px;
+  border-left: 3px solid;
+  flex: 1;
+}
+
+.status-msg.success {
+  color: var(--drz-green);
+  border-color: var(--drz-green);
+  background: var(--drz-green-subtle);
+}
+
+.status-msg.error {
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.08);
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--drz-green);
+  color: var(--drz-dark);
+  border: none;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  cursor: pointer;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5dff3a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px var(--drz-green-glow);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-arrow {
+  font-size: 10px;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(5,13,24,0.3);
+  border-top-color: var(--drz-dark);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* ─── INFO GRID ─── */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.info-card {
+  background: var(--drz-dark-2);
+  border: 1px solid var(--drz-border);
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: border-color 0.2s;
+}
+
+.info-card:hover {
+  border-color: var(--drz-blue-accent);
+}
+
+.info-icon {
+  font-size: 22px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.info-card strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--drz-text);
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.info-card p {
+  font-size: 12px;
+  color: var(--drz-text-muted);
+}
+
+@media (max-width: 640px) {
+  .info-grid { grid-template-columns: 1fr; }
+  .screen-title { font-size: 24px; }
+}
